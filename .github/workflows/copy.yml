@@ -4,7 +4,7 @@ on:
    branches:
      -main 
 jobs: 
-	repo_copy:
+	-repo_copy:
 	   runs-on: ubuntu-latest
 	   steps: 
 		- uses: actions/checkout@v3
