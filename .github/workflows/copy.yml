@@ -2,7 +2,6 @@ name: Example Workflow to push to demo repo
 on: 
   push:
    branches:
-     - main 
 jobs: 
         repo_copy:
 	runs-on: ubuntu-latest
