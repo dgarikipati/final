@@ -1,0 +1,18 @@
+name: Example Workflow to push to demo repo
+on: 
+  push:
+   branches:
+     -main 
+jobs: 
+	repo_copy:
+	   runs-on: ubuntu-latest
+	   steps: 
+		- uses: actions/checkout@v3
+		- name: Use secrets 
+		  run: echo ${{secrets,HITACHI_GITHUB_TOKEN}}
+		
+		- name: copy to new repo
+		  run: 
+		   #- add a remote repo
+		   git remote add upstream https://${{secrets,HITACHI_GITHUB_TOKEN}}@github.com/dgarikipati/demo.git
+		   git push upstream main
